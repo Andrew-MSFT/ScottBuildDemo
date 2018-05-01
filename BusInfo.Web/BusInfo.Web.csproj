@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>5c5367b4-53de-48df-8d5a-09a698e43cb4</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview2-final" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusInfo\BusInfo.csproj" />
+  </ItemGroup>
+
+
+</Project>
