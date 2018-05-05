@@ -2,8 +2,9 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using BusInfoHelpers;
+//using BusInfoHelpers;
 
 namespace BusInfo
 {
@@ -257,6 +258,21 @@ namespace BusInfo
                 }
             }
             return (null, null);
+        }
+
+        class BusHelpers
+        {
+            internal static string CleanRouteName(string routeShortName)
+            {
+                return Regex.Replace(routeShortName, "[^0-9]", "");
+            }
+
+            internal static DateTime ConvertMillisecondsToUTC(object predictedTimeMS)
+            {
+                DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                double num = Convert.ToDouble(predictedTimeMS);
+                return dateTime.AddMilliseconds(num);
+            }
         }
     }
 }

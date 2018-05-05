@@ -29,6 +29,8 @@ namespace UnitTestProject
 
             Assert.AreEqual(expectedStop.Id, actual.Item2.Id);
             Assert.AreEqual(expectedRoute.Id, actual.Item1.Id);
+
+            await Task.Delay(500);
         }
 
         [TestMethod]
@@ -36,7 +38,7 @@ namespace UnitTestProject
         {
             await Assert.ThrowsExceptionAsync<ArgumentException>(async () =>
                         await busInfo.GetRouteAndStopForLocation("234", conventionCenter.lat, conventionCenter.lon));
-            await Task.Delay(4000);
+            await Task.Delay(1000);
         }
 
         [TestMethod]
@@ -55,6 +57,8 @@ namespace UnitTestProject
 
             Assert.AreEqual(expected2.Count, actual.Count);
             CollectionAssert.AreEqual(expected2, actual);
+
+            await Task.Delay(150);
         }
 
         [TestMethod]
@@ -63,6 +67,7 @@ namespace UnitTestProject
             await Assert.ThrowsExceptionAsync<ArgumentException>(async () =>
                                     await busInfo.GetArrivalTimesForRouteName(_busRoute, "-100.0000", "200.0000", date),
                                     "Not a valid latitude or longitude.");
+            await Task.Delay(1500);
         }
 
         [TestMethod]
@@ -71,6 +76,7 @@ namespace UnitTestProject
             await Assert.ThrowsExceptionAsync<ArgumentNullException>(async () =>
                                     await busInfo.GetArrivalTimesForRouteName(_busRoute, 
                                     null, null, date));
+            await Task.Delay(1500);
         }
     }
 }

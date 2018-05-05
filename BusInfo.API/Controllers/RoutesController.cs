@@ -9,12 +9,11 @@ using Newtonsoft.Json;
 namespace BusInfo.API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class RoutesController : ControllerBase
     {
         // GET api/values
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Route>>> Get()
+        public async Task<IEnumerable<Route>> Get()
         {
             var routesMock = new MockBusLocator();
             var routesJson = await routesMock.GetJsonForStopsAsync();
@@ -24,7 +23,7 @@ namespace BusInfo.API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public string Get(int id)
         {
             return "value";
         }

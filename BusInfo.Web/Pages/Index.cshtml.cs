@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using BusInfoHelpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
@@ -20,7 +19,7 @@ namespace BusInfo.Web.Pages
         {
             get
             {
-                return BusHelpers.ConvertMillisecondsToUTC(this.PredictedArrival).ToShortTimeString();
+                return this.PredictedArrival.ToShortTimeString();
             }
         }
     }
@@ -38,7 +37,8 @@ namespace BusInfo.Web.Pages
 
         public async Task OnGetAsync()
         {
-            List<Route> routes = await _busRouteProvider.GetBusRoutesAsync<List<Route>>("http://businfo.api/api/routes");
+            const string routeServiceURL = "http://localhost:5000/api/routes"; //"http://businfo.api/api/routes";
+            List<Route> routes = await _busRouteProvider.GetBusRoutesAsync<List<Route>>(routeServiceURL);
             this.Routes = from route in routes
                           //where route.ShortName != string.Empty && route.Description != string.Empty 
                           select new DisplayRouteData

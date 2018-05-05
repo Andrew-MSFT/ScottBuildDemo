@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusInfoHelpers;
 
 namespace BusInfo.Web.Tests
 {
@@ -39,8 +40,10 @@ namespace BusInfo.Web.Tests
             IndexModel page = new IndexModel(new BusRouteProvider());
             await page.OnGetAsync();
 
-            var displayTime = page.Routes.ToList()[0].DisplayArrivalTime;
-
+            DisplayRouteData displayRouteData = page.Routes.ToList()[0];
+            var displayTime = displayRouteData.DisplayArrivalTime;
+            var expectedDisplay = BusHelpers.ConvertMillisecondsToUTC(displayRouteData.PredictedArrival).ToShortTimeString();
+            BusHelpers.CleanRouteName("");
             Assert.AreEqual("12:00 AM", displayTime);
         }
     }
