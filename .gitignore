@@ -260,3 +260,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/BusInfo.Web/Properties/PublishProfiles
+/BusInfo.API/Properties/PublishProfiles

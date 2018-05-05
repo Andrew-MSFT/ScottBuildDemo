@@ -34,7 +34,7 @@ namespace BusInfo.Web.Pages
 
         public async Task OnGetAsync()
         {
-            const string routeServiceURL = "http://localhost:5000/api/routes"; //"http://businfo.api/api/routes";
+            const string routeServiceURL = "http://businfo.api/api/routes";
             List<Route> routes = await _busRouteProvider.GetBusRoutesAsync<List<Route>>(routeServiceURL);
             this.Routes = from route in routes
                           //where route.ShortName != string.Empty && route.Description != string.Empty
