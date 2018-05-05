@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27318.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusInfoTests", "BusInfoTests\BusInfoTests.csproj", "{FDDE5CB5-DDEF-4CC5-88DB-D62A88952A8D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{27033F1B-442B-4408-B072-F96387B0C32A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusInfo.API", "BusInfo.API\BusInfo.API.csproj", "{F004A2A0-122F-4371-A7E0-CE808D7B64DD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusInfo.Web", "BusInfo.Web\BusInfo.Web.csproj", "{1C66C2C5-E003-48A6-872F-9926FE785CF0}"
@@ -16,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusInfo.Web.Tests", "BusInfo.Web.Tests\BusInfo.Web.Tests.csproj", "{F07A0FC2-D847-405D-8A2E-7B9E17EB6E2F}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1FB93530-95EF-4BBD-8009-671F99EFAE9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{F945186D-D800-4E33-8AB9-4B91CB6B014A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,8 +52,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FDDE5CB5-DDEF-4CC5-88DB-D62A88952A8D} = {27033F1B-442B-4408-B072-F96387B0C32A}
-		{F07A0FC2-D847-405D-8A2E-7B9E17EB6E2F} = {27033F1B-442B-4408-B072-F96387B0C32A}
+		{EB6137A4-D3F1-4929-AFBC-A7B4B654274E} = {F945186D-D800-4E33-8AB9-4B91CB6B014A}
+		{1FB93530-95EF-4BBD-8009-671F99EFAE9E} = {F945186D-D800-4E33-8AB9-4B91CB6B014A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F29E7431-503B-4EF8-AB4F-9B7788B6550D}
